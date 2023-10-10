@@ -63,10 +63,10 @@ var onlyLower		= !localStorage.getItem('onlyLower') || localStorage.getItem('onl
 var answerString = "";		  // A string representation of the words for the current test. After a correct word is typed,
 						  // it is removed from the beginning of answerString. By the end of the test, there should be 
 						  // no words in answerString
-var keyboardMap = layoutMaps['colemak'];
-var letterDictionary = levelDictionaries['colemak'];
-var currentLayout = localStorage.getItem('currentLayout') || 'colemak';
-var currentKeyboard = localStorage.getItem('currentKeyboard') || 'ansi';
+var keyboardMap = layoutMaps['lhcolemakdhm'];
+var letterDictionary = levelDictionaries['lhcolemakdhm'];
+var currentLayout = localStorage.getItem('currentLayout') || 'lhcolemakdhm';
+var currentKeyboard = localStorage.getItem('currentKeyboard') || 'ortho';
 var shiftDown 			= false; // tracks whether the shift key is currently being pushed
 var fullSentenceMode 	= false; // if true, all prompts will be replace with sentences
 var fullSentenceModeEnabled = localStorage.getItem('fullSentenceModeEnabled') === 'true';
@@ -573,11 +573,22 @@ function updateLayoutUI() {
 			break;
 		case 'ortho':
 			document.querySelector('.cheatsheet').innerHTML = orthoDivs;
-			layoutMaps.colemakdh.KeyZ = 'z';
+			layoutMaps.colemakdh.KeyZ = '/';
 			layoutMaps.colemakdh.KeyX = 'x';
 			layoutMaps.colemakdh.KeyC = 'c';
 			layoutMaps.colemakdh.KeyV = 'd';
 			layoutMaps.colemakdh.KeyB = 'v';
+
+			layoutMaps.lhcolemakdhm.KeyZ = ';';
+			layoutMaps.lhcolemakdhm.KeyX = 'z';
+			layoutMaps.lhcolemakdhm.KeyC = 'x';
+			layoutMaps.lhcolemakdhm.KeyV = 'c';
+			layoutMaps.lhcolemakdhm.KeyB = 'd';
+			layoutMaps.lhcolemakdhm.KeyN = 'v';
+			layoutMaps.lhcolemakdhm.KeyM = 'k';
+			layoutMaps.lhcolemakdhm.Comma = 'h';
+			layoutMaps.lhcolemakdhm.Period = '.';
+			layoutMaps.lhcolemakdhm.Slash = ',';
 
 			layoutMaps.tarmakdh.KeyZ = 'z';
 			layoutMaps.tarmakdh.KeyX = 'x';
